@@ -4,16 +4,20 @@ Telegram bot that downloads media from links you send it (YouTube + many sites v
 
 ## Features
 
-- Paste one or multiple URLs in a message
-- Tries `yt-dlp` first (YouTube, IG reels/posts, and more)
-- Instagram fallback via `instagrapi` (posts, reels, albums, stories-by-URL)
-- Cleans up downloaded files after sending
-- Non-blocking downloads (runs download work off the async event loop)
-
+* **Multi-Platform:** Support for YouTube, Twitter, TikTok, and more via `yt-dlp`.
+* **Instagram Specialist:** Dedicated fallback handling using `instagrapi`.
+* **Fast Delivery:** Directly sends the media file back to your Telegram chat.
+* **Environment Ready:** Easily configurable via `.env` file.
 ## Requirements
 
 - Python 3.10+
 - A Telegram bot token from @BotFather
+
+1. **Clone the repository:**
+```bash
+   git clone [https://github.com/MrKaRmA69/KaRmA-Downloader.git](https://github.com/MrKaRmA69/KaRmA-Downloader.git)
+   cd KaRmA-Downloader
+```
 
 ## Setup
 
