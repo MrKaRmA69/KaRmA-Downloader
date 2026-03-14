@@ -13,12 +13,13 @@ Telegram bot that downloads media from links you send it (YouTube + many sites v
 - Python 3.10+
 - A Telegram bot token from @BotFather
 
+## Installation
+
 1. **Clone the repository:**
 ```bash
    git clone [https://github.com/MrKaRmA69/KaRmA-Downloader.git](https://github.com/MrKaRmA69/KaRmA-Downloader.git)
    cd KaRmA-Downloader
 ```
-
 ## Setup
 
 ```bash
