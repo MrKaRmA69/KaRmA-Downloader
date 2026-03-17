@@ -1,45 +1,44 @@
-# ​⚠️ NOTICE: This repository is for personal educational purposes only. It is a study of API integration (Telethon/yt-dlp) and Python asynchronous programming. It is not intended to bypass platform security or violate Copyright Laws.
+# ⚠️ NOTICE: This repository is for personal educational purposes only. It is a study of API integration (Telethon/yt-dlp) and Python asynchronous programming. It is not intended to bypass platform security or violate Copyright Laws.
 
-# Telegram Media Downloader Bot
+# KaRmA Integration Framework
 
-Telegram bot that downloads media from links you send it (YouTube + many sites via `yt-dlp`, with an Instagram fallback via `instagrapi`) and sends the file back in chat.
+An asynchronous Python framework for managing and archiving media metadata from various platforms via `Telethon`. This project is a technical study of the `yt-dlp` and `instagrapi` engines for personal data management.
 
 ## Features
 
-* **Multi-Platform:** Support for YouTube, Twitter, TikTok, and more via `yt-dlp`.
-* **Instagram Specialist:** Dedicated fallback handling using `instagrapi`.
-* **Fast Delivery:** Directly sends the media file back to your Telegram chat.
-* **Environment Ready:** Easily configurable via `.env` file.
+* **Multi-Protocol Support:** Researching metadata extraction for various platforms via `yt-dlp`.
+* **Session Handling:** Implementation of fallback logic using `instagrapi`.
+* **Asynchronous Delivery:** Direct transmission of processed data to your private Telegram storage.
+* **Environment Ready:** Fully modular configuration via `.env` file.
+
 ## Requirements
 
 - Python 3.10+
-- A Telegram bot token from @BotFather
+- A Telegram API token from @BotFather
 
 ## Installation
 
 1. **Clone the repository:**
 ```bash
-   git clone [https://github.com/MrKaRmA69/KaRmA-Downloader.git](https://github.com/MrKaRmA69/KaRmA-Downloader.git)
-   cd KaRmA-Downloader
+git clone https://github.com/MrKaRmA69/KaRmA-Downloader.git
+cd KaRmA-Downloader
 ```
-## Setup
 
+2. **Setup:**
 ```bash
 python -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
-Create `.env` (see `.env.example`):
-
+3. **Create .env (see .env.example):**
 ```bash
 cp .env.example .env
 ```
 
 Edit `.env` and set:
-
 - `BOT_TOKEN` (required)
-- `IG_USER` / `IG_PASS` (optional, improves Instagram access)
+- `IG_USER` / `IG_PASS` (optional)
 
 ## Run
 
@@ -49,36 +48,32 @@ python bot.py
 
 ## Usage
 
-1. Open your bot in Telegram
-2. Send `/start`
-3. Paste a YouTube / Instagram / other supported URL
-4. The bot downloads and replies with the media file(s)
+1. Open your instance in Telegram.
+2. Initialize with `/start`.
+3. Provide a URL to media you personally own or have permission to archive.
+4. The system processes the request and mirrors the file to your chat.
 
 ## Configuration
 
-These are read from `.env`:
+These parameters are managed via `.env`:
 
-- `BOT_TOKEN` (required): Telegram bot token
-- `IG_USER` (optional): Instagram username
-- `IG_PASS` (optional): Instagram password
-- `TG_MAX_MB` (optional, default `49.0`): Max file size (MB) the bot will attempt to send
-- `IG_PROXY` (optional): Proxy DSN for Instagram requests (example: `socks5://user:pass@host:port`)
-- `YTDLP_PROXY` (optional): Proxy for `yt-dlp` (example: `http://user:pass@host:port`)
-- `YTDLP_COOKIES_FILE` (optional): Path to a `yt-dlp` cookies file (Netscape format)
+- `BOT_TOKEN`: Your private API token.
+- `IG_USER` / `IG_PASS`: Optional session credentials.
+- `TG_MAX_MB`: Maximum file size threshold (default 49.0).
+- `IG_PROXY` / `YTDLP_PROXY`: Proxy DSN for network research.
+- `YTDLP_COOKIES_FILE`: Path to a local cookies file for authenticated requests.
 
 ## Notes / Troubleshooting
 
-- Instagram may require a challenge/verification during login. If that happens, either complete it with a saved session flow, or remove `IG_USER`/`IG_PASS` and rely on `yt-dlp` where possible.
-- If Instagram downloads fail with “requires cookies” or “empty media response”, export cookies from your browser and set `YTDLP_COOKIES_FILE`.
-- If Instagram says your IP is blocked/blacklisted, run the bot from a different network/IP (or set `IG_PROXY` / `YTDLP_PROXY`).
-- Some links may fail due to site restrictions, rate limits, private content, or geo blocks.
-- If you deploy to a server, run behind a process manager (systemd, pm2, supervisor) so it restarts automatically.
+- Authentication challenges may occur during login. Use a saved session flow or rely on standard library defaults.
+- If network restrictions occur, utilize the `IG_PROXY` or `YTDLP_PROXY` settings.
+- System performance may vary based on site-specific rate limits or geo-restrictions.
 
 ## Security
 
-- Never commit `.env` to git (this repo includes `.gitignore` entries for it).
-- If a token/password is ever shared publicly, rotate it immediately (Telegram token in @BotFather; Instagram password in Instagram).
+- **Strict Exclusion:** Never commit `.env` or session files. This repository uses `.gitignore` to prevent credential leakage.
+- **Rotation:** If credentials are compromised, rotate them immediately via the respective platform providers.
 
 ## Legal
 
-Respect the Terms of Service for the sites you download from. You are responsible for how you use this bot.
+Users are strictly responsible for complying with the Terms of Service of any platforms accessed. This tool is for personal archival of content you have the legal right to access.
