@@ -1,3 +1,5 @@
+# ​⚠️ NOTICE: This repository is for personal educational purposes only. It is a study of API integration (Telethon/yt-dlp) and Python asynchronous programming. It is not intended to bypass platform security or violate Copyright Laws.
+
 # Telegram Media Downloader Bot
 
 Telegram bot that downloads media from links you send it (YouTube + many sites via `yt-dlp`, with an Instagram fallback via `instagrapi`) and sends the file back in chat.
