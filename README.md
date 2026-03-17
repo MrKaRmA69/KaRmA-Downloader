@@ -25,7 +25,25 @@ cd KaRmA-Downloader
 ```
 
 2. **Setup:**
+
+**Linux/macOS:**
 ```bash
+python -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+```
+
+**Windows:**
+```cmd
+python -m venv .venv
+.venv\Scripts\activate
+pip install -r requirements.txt
+```
+
+**Termux (Android):**
+```bash
+pkg update && pkg upgrade
+pkg install python git
 python -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
